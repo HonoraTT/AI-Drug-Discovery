@@ -20,6 +20,7 @@
       <section class="content-section">
         <div class="content-wrapper">
           <MainLeft />
+          <div class="divider"></div>
           <MainRight />
         </div>
       </section>
@@ -95,20 +96,16 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-html {
+.home-container {
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
-.home-container {
-  min-height: 100vh;
-  font-family: 'Arial', sans-serif;
-  background-color: #f8f9fa;
-}
-
 /* 主要内容样式 */
 .main-content {
-  /* max-width: 1200px; */
   margin: 0 auto;
   padding: 2rem;
 }
@@ -119,21 +116,22 @@ html {
 }
 
 .welcome-card {
-  background-color: #e8f5e8;
+  background: linear-gradient(135deg, #e6f3ff, #b0d8ff);
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(135, 206, 250, 0.2);
 
   margin: 0 auto;
 }
 
 .welcome-card h2 {
-  color: #2e7d32;
+  color: #4682b4;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
 }
 
 .welcome-card p {
-  color: #555;
+  color: #4682b4;
   line-height: 1.6;
 }
 
@@ -150,6 +148,29 @@ html {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.divider {
+  width: 2px;
+  background: linear-gradient(to bottom, #87cefa, #4682b4, #87cefa);
+  margin: 0 1rem;
+  border-radius: 1px;
+  box-shadow: 0 0 2px rgba(135, 206, 250, 0.5);
+  align-self: stretch;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.5;
+  }
 }
 
 /* 向下箭头样式 */
@@ -172,7 +193,9 @@ html {
 .arrow-circle {
   width: 50px;
   height: 50px;
-  border: 2px solid #2e7d32;
+  border: 2px solid #87cefa;
+  background: linear-gradient(135deg, #e6f3ff, #b0d8ff);
+  box-shadow: 0 4px 8px rgba(135, 206, 250, 0.3);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -183,7 +206,7 @@ html {
 
 .arrow-icon {
   font-size: 2rem;
-  color: #2e7d32;
+  color: #4682b4;
   font-weight: bold;
   width: 1em;
   height: 1em;
@@ -206,7 +229,7 @@ html {
 }
 
 .scroll-down p {
-  color: #555;
+  color: #4682b4;
   font-size: 0.9rem;
 }
 .pic-text {

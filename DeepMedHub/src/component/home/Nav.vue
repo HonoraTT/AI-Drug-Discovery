@@ -19,8 +19,8 @@
 
 <style scoped>
 .navbar {
-  background-color: #e0f7e0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #87cefa, #4682b4);
+  box-shadow: 0 4px 12px rgba(135, 206, 250, 0.3);
   padding: 0.5rem 0;
 }
 
@@ -38,18 +38,21 @@
 
 .nav-link {
   text-decoration: none;
-  color: #2e7d32;
+  color: white;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .nav-link:hover {
-  background-color: #c8e6c9;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
 .nav-link.active {
-  background-color: #81c784;
+  background: rgba(255, 255, 255, 0.3);
   font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 </style>

@@ -7,12 +7,11 @@
   </footer>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style scoped>
 .footer {
-  background-color: #2e7d32;
+  background: linear-gradient(135deg, #87cefa, #4682b4);
   color: white;
   text-align: center;
   padding: 0 0;
@@ -25,7 +24,6 @@
 }
 
 .footer-content {
-
   max-width: none;
   margin: 0 0;
   padding: 0 0;

@@ -4,7 +4,7 @@
       <!-- 第一组：左图右文（奇数） -->
       <div class="feature-item odd">
         <div class="feature-image">
-          <img src="https://via.placeholder.com/400x300" alt="功能1">
+          <img src="https://via.placeholder.com/400x300" alt="功能1" />
         </div>
         <div class="feature-text">
           <h3>功能一</h3>
@@ -19,14 +19,14 @@
           <p>这里是关于第二个功能的详细描述，可以展示该功能的具体作用和优势。</p>
         </div>
         <div class="feature-image">
-          <img src="https://via.placeholder.com/400x300" alt="功能2">
+          <img src="https://via.placeholder.com/400x300" alt="功能2" />
         </div>
       </div>
 
       <!-- 第三组：左图右文（奇数） -->
       <div class="feature-item odd">
         <div class="feature-image">
-          <img src="https://via.placeholder.com/400x300" alt="功能3">
+          <img src="https://via.placeholder.com/400x300" alt="功能3" />
         </div>
         <div class="feature-text">
           <h3>功能三</h3>
@@ -41,14 +41,14 @@
           <p>这里是关于第四个功能的详细描述，可以展示该功能的具体作用和优势。</p>
         </div>
         <div class="feature-image">
-          <img src="https://via.placeholder.com/400x300" alt="功能4">
+          <img src="https://via.placeholder.com/400x300" alt="功能4" />
         </div>
       </div>
 
       <!-- 第五组：左图右文（奇数） -->
       <div class="feature-item odd">
         <div class="feature-image">
-          <img src="https://via.placeholder.com/400x300" alt="功能5">
+          <img src="https://via.placeholder.com/400x300" alt="功能5" />
         </div>
         <div class="feature-text">
           <h3>功能五</h3>
@@ -59,8 +59,7 @@
   </section>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style scoped>
 .feature-section {
@@ -105,6 +104,7 @@
 .feature-image img {
   width: 100%;
   height: 300px;
+  max-height: 400px;
   object-fit: cover;
 }
 
@@ -114,12 +114,13 @@
 }
 
 .feature-text h3 {
-  color: #2e7d32;
+  color: #4682b4;
   margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .feature-text p {
-  color: #555;
+  color: #4682b4;
   line-height: 1.6;
 }
 </style>

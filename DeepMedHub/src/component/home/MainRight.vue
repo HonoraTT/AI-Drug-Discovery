@@ -20,9 +20,8 @@
     </div>
   </div>
 </template>
-<script setup>
-</script>
-<style  scoped>
+<script setup></script>
+<style scoped>
 .right-column {
   flex: 1;
   min-width: 300px;
@@ -31,7 +30,7 @@
 .carousel {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 460px;
   overflow: hidden;
 }
 
@@ -70,12 +69,14 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(135, 206, 250, 0.5);
+  box-shadow: 0 2px 4px rgba(135, 206, 250, 0.3);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .indicator.active {
-  background-color: #2e7d32;
+  background: linear-gradient(135deg, #87cefa, #4682b4);
+  box-shadow: 0 4px 8px rgba(135, 206, 250, 0.5);
 }
 </style>
