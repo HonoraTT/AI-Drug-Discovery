@@ -2,7 +2,7 @@
   <div class="home-container">
     <!-- 头部区域 -->
     <Title />
-    
+
     <!-- 导航栏 -->
     <Nav />
 
@@ -26,23 +26,25 @@
 
       <!-- 向下箭头提示 -->
       <div class="scroll-down">
-        <div class="arrow-icon">↓</div>
-        <p>向下滑动查看更多</p>
+        <div class="arrow-circle">
+          <el-icon class="arrow-icon"><arrow-down /></el-icon>
+        </div>
       </div>
-      
-      <!-- 图文交替区域 -->
-      <MainCenter />
 
-      
+      <div class="pic-text">
+        <!-- 图文交替区域 -->
+        <MainCenter />
+      </div>
     </main>
 
     <!-- 页脚 -->
-      <Footer />
+    <Footer />
   </div>
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
+import { ArrowDown } from '@element-plus/icons-vue'
 import Title from '@/component/home/Title.vue'
 import Nav from '@/component/home/Nav.vue'
 import MainLeft from '@/component/home/MainLeft.vue'
@@ -57,11 +59,11 @@ const startCarousel = () => {
   let currentIndex = 0
 
   const showNextSlide = () => {
-    carouselItems.forEach(item => item.classList.remove('active'))
-    indicators.forEach(indicator => indicator.classList.remove('active'))
-    
+    carouselItems.forEach((item) => item.classList.remove('active'))
+    indicators.forEach((indicator) => indicator.classList.remove('active'))
+
     currentIndex = (currentIndex + 1) % carouselItems.length
-    
+
     carouselItems[currentIndex].classList.add('active')
     indicators[currentIndex].classList.add('active')
   }
@@ -70,16 +72,32 @@ const startCarousel = () => {
   setInterval(showNextSlide, 3000)
 }
 
+// 滚动监听逻辑
+const handleScroll = () => {
+  const scrollDown = document.querySelector('.scroll-down')
+  if (window.scrollY > 50) {
+    scrollDown?.classList.add('hidden')
+  } else {
+    scrollDown?.classList.remove('hidden')
+  }
+}
+
 // 页面加载完成后启动轮播
 onMounted(() => {
   startCarousel()
+  window.addEventListener('scroll', handleScroll)
+})
+
+// 组件卸载前移除事件监听器
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
 })
 </script>
 
 <style scoped>
-html{
-    margin: 0;
-    padding: 0;
+html {
+  margin: 0;
+  padding: 0;
 }
 
 .home-container {
@@ -90,7 +108,7 @@ html{
 
 /* 主要内容样式 */
 .main-content {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
   padding: 2rem;
 }
@@ -105,7 +123,7 @@ html{
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
+
   margin: 0 auto;
 }
 
@@ -121,11 +139,11 @@ html{
 
 /* 内容区域样式 */
 .content-section {
-  margin: 3rem 0;
-  background-color: white;
+  margin: 4rem 0;
+  /* background-color: white; */
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
 }
 
 .content-wrapper {
@@ -136,20 +154,63 @@ html{
 
 /* 向下箭头样式 */
 .scroll-down {
+  position: fixed;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  margin: 3rem 0;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
   padding: 1rem;
 }
 
+.scroll-down.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.arrow-circle {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #2e7d32;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.5rem;
+  animation: bounce 2s infinite;
+}
+
 .arrow-icon {
-  font-size: 3rem;
+  font-size: 2rem;
   color: #2e7d32;
-  margin-bottom: 0.5rem;
+  font-weight: bold;
+  width: 1em;
+  height: 1em;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
 }
 
 .scroll-down p {
   color: #555;
   font-size: 0.9rem;
 }
-
+.pic-text {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 </style>
