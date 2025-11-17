@@ -102,6 +102,15 @@ onUnmounted(() => {
   width: 100%;
   margin: 0;
   padding: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(33, 150, 243, 0.1) 0%,
+    rgba(33, 150, 243, 0.05) 50%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background-attachment: fixed;
 }
 
 /* 主要内容样式 */
