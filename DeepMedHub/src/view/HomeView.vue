@@ -101,15 +101,31 @@ onUnmounted(() => {
   width: 100%;
   margin: 0;
   padding: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(33, 150, 243, 0.1) 0%,
-    rgba(33, 150, 243, 0.05) 50%,
-    rgba(255, 255, 255, 0.9) 100%
-  );
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+
   background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+
+  background: linear-gradient(135deg, rgba(230, 243, 255, 0.7), rgba(176, 216, 255, 0.7));
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(135, 206, 250, 0.3);
+  box-shadow: 0 8px 16px rgba(135, 206, 250, 0.2);
+}
+
+/* 添加背景伪元素增强毛玻璃效果 */
+.home-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(135, 206, 250, 0.05) 0%, rgba(33, 150, 243, 0.05) 100%);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: -1;
 }
 
 /* 主要内容样式 */
@@ -124,12 +140,27 @@ onUnmounted(() => {
 }
 
 .welcome-card {
-  background: linear-gradient(135deg, #e6f3ff, #b0d8ff);
+  background: linear-gradient(135deg, rgba(230, 243, 255, 0.8), rgba(176, 216, 255, 0.8));
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 12px;
   box-shadow: 0 8px 16px rgba(135, 206, 250, 0.2);
-
   margin: 0 auto;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(135, 206, 250, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  z-index: -1;
 }
 
 .welcome-card h2 {
@@ -146,10 +177,13 @@ onUnmounted(() => {
 /* 内容区域样式 */
 .content-section {
   margin: 4rem 0;
-  /* background-color: white; */
   padding: 2rem;
-  border-radius: 8px;
-  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, rgba(230, 243, 255, 0.7), rgba(176, 216, 255, 0.7));
+  border: 1px solid rgba(135, 206, 250, 0.3);
+  box-shadow: 0 8px 16px rgba(135, 206, 250, 0.2);
 }
 
 .content-wrapper {

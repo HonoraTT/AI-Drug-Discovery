@@ -96,9 +96,34 @@
 
 .feature-image {
   flex: 1;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  box-shadow: 0 8px 16px rgba(33, 150, 243, 0.2);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  background: linear-gradient(135deg, rgba(135, 206, 250, 0.1), rgba(33, 150, 243, 0.1));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(135, 206, 250, 0.3);
+}
+
+.feature-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(33, 150, 243, 0.3);
+}
+
+.feature-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  z-index: 1;
+  border-radius: 12px;
 }
 
 .feature-image img {
@@ -106,11 +131,24 @@
   height: 300px;
   max-height: 400px;
   object-fit: cover;
+  transition: transform 0.5s ease;
+  position: relative;
+  z-index: 0;
+}
+
+.feature-image:hover img {
+  transform: scale(1.05);
 }
 
 .feature-text {
   flex: 1;
-  padding: 1rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(230, 243, 255, 0.7), rgba(176, 216, 255, 0.7));
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(135, 206, 250, 0.2);
+  box-shadow: 0 4px 8px rgba(135, 206, 250, 0.1);
 }
 
 .feature-text h3 {

@@ -11,7 +11,7 @@
 
 <style scoped>
 .footer {
-  background: linear-gradient(135deg, #87cefa, #4682b4);
+  background: linear-gradient(135deg, rgba(135, 206, 250, 0.8), rgba(70, 130, 180, 0.8));
   color: white;
   text-align: center;
   padding: 0 0;
@@ -21,6 +21,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(135, 206, 250, 0.3);
 }
 
 .footer-content {

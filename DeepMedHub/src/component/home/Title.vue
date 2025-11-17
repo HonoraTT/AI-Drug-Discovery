@@ -12,10 +12,13 @@ import LogoImg from '@/assets/imgs/logol.png'
 
 <style scoped>
 .header {
-  /* background: linear-gradient(135deg, #87cefa, #4682b4); */
+  background: linear-gradient(135deg, rgba(230, 243, 255, 0.8), rgba(176, 216, 255, 0.8));
   box-shadow: 0 4px 12px rgba(135, 206, 250, 0.3);
   padding: 1rem 0;
   text-align: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(135, 206, 250, 0.3);
 }
 
 .logo-area span {

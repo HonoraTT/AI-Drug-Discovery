@@ -20,7 +20,7 @@
 .molecule-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .molecule-item {
