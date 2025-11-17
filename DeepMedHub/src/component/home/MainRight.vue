@@ -89,6 +89,10 @@
   border-radius: 12px;
 }
 
+.carousel-item img:hover {
+  transform: scale(1.05);
+}
+
 .carousel-indicators {
   position: absolute;
   bottom: 1rem;
