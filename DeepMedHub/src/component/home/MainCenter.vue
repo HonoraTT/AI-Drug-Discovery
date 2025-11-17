@@ -4,7 +4,7 @@
       <!-- 第一组：左图右文（奇数） -->
       <div class="feature-item odd">
         <div class="feature-image">
-          <img src="https://via.placeholder.com/400x300" alt="功能1" />
+          <img src="@/assets/imgs/img1.jpg" alt="功能1" />
         </div>
         <div class="feature-text">
           <h3>功能一</h3>
@@ -19,14 +19,14 @@
           <p>这里是关于第二个功能的详细描述，可以展示该功能的具体作用和优势。</p>
         </div>
         <div class="feature-image">
-          <img src="https://via.placeholder.com/400x300" alt="功能2" />
+          <img src="@/assets/imgs/img2.jpg" alt="功能2" />
         </div>
       </div>
 
       <!-- 第三组：左图右文（奇数） -->
       <div class="feature-item odd">
         <div class="feature-image">
-          <img src="https://via.placeholder.com/400x300" alt="功能3" />
+          <img src="@/assets/imgs/img3.jpg" alt="功能3" />
         </div>
         <div class="feature-text">
           <h3>功能三</h3>
@@ -41,14 +41,14 @@
           <p>这里是关于第四个功能的详细描述，可以展示该功能的具体作用和优势。</p>
         </div>
         <div class="feature-image">
-          <img src="https://via.placeholder.com/400x300" alt="功能4" />
+          <img src="@/assets/imgs/img4.jpg" alt="功能4" />
         </div>
       </div>
 
       <!-- 第五组：左图右文（奇数） -->
       <div class="feature-item odd">
         <div class="feature-image">
-          <img src="https://via.placeholder.com/400x300" alt="功能5" />
+          <img src="@/assets/imgs/img5.jpg" alt="功能5" />
         </div>
         <div class="feature-text">
           <h3>功能五</h3>

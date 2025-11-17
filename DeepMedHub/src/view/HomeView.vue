@@ -28,7 +28,7 @@
       <!-- 向下箭头提示 -->
       <div class="scroll-down">
         <div class="arrow-circle">
-          <el-icon class="arrow-icon"><arrow-down /></el-icon>
+          <el-icon class="arrow-icon"><ArrowDown /></el-icon>
         </div>
       </div>
 
@@ -45,7 +45,6 @@
 
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
-import { ArrowDown } from '@element-plus/icons-vue'
 import Title from '@/component/home/Title.vue'
 import Nav from '@/component/home/Nav.vue'
 import MainLeft from '@/component/home/MainLeft.vue'
@@ -76,7 +75,7 @@ const startCarousel = () => {
 // 滚动监听逻辑
 const handleScroll = () => {
   const scrollDown = document.querySelector('.scroll-down')
-  if (window.scrollY > 50) {
+  if (window.scrollY > 100) {
     scrollDown?.classList.add('hidden')
   } else {
     scrollDown?.classList.remove('hidden')
@@ -219,6 +218,9 @@ onUnmounted(() => {
   font-weight: bold;
   width: 1em;
   height: 1em;
+  display: inline-flex; /* 添加这行确保图标正确显示 */
+  align-items: center;
+  justify-content: center;
 }
 
 @keyframes bounce {

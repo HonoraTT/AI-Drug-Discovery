@@ -3,13 +3,13 @@
     <div class="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="https://via.placeholder.com/400x300" alt="分子结构1" />
+          <img src="@/assets/imgs/img5.jpg" alt="分子结构1" />
         </div>
         <div class="carousel-item">
-          <img src="https://via.placeholder.com/400x300" alt="分子结构2" />
+          <img src="@/assets/imgs/img6.jpg" alt="分子结构2" />
         </div>
         <div class="carousel-item">
-          <img src="https://via.placeholder.com/400x300" alt="分子结构3" />
+          <img src="@/assets/imgs/img7.jpg" alt="分子结构3" />
         </div>
       </div>
       <div class="carousel-indicators">
@@ -30,7 +30,6 @@
 .carousel {
   position: relative;
   width: 100%;
-  height: 460px;
   overflow: hidden;
 }
 
@@ -43,7 +42,7 @@
 .carousel-item {
   flex: 1;
   display: none;
-  height: 100%;
+  height: 500px;
 }
 
 .carousel-item.active {
@@ -52,7 +51,7 @@
 
 .carousel-item img {
   width: 100%;
-  height: 100%;
+  height: 460px;
   object-fit: cover;
 }
 
@@ -69,14 +68,16 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: rgba(135, 206, 250, 0.5);
-  box-shadow: 0 2px 4px rgba(135, 206, 250, 0.3);
+  background-color: rgba(135, 206, 250, 0.8);
+  box-shadow: 0 2px 4px rgba(135, 206, 250, 0.5);
   cursor: pointer;
   transition: all 0.3s ease;
+  transform: translateY(30%);
 }
 
 .indicator.active {
   background: linear-gradient(135deg, #87cefa, #4682b4);
-  box-shadow: 0 4px 8px rgba(135, 206, 250, 0.5);
+  box-shadow: 0 4px 8px rgba(135, 206, 250, 0.8);
+  transform: scale(1.2);
 }
 </style>
