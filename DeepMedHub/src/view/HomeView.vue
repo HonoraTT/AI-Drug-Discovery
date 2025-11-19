@@ -26,13 +26,10 @@
       </section>
 
       <!-- 向下箭头提示 -->
-
-      <ArrowDown />
+      <ArrowDown :hidden="scrollDownHidden" @click="handleArrowClick" />
 
       <!-- 图文交替区域 -->
-      <div class="pic-text">
-        <MainCenter />
-      </div>
+      <MainCenter />
     </main>
 
     <!-- 页脚 -->
@@ -41,7 +38,7 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import Title from '@/component/home/Title.vue'
 import Nav from '@/component/home/Nav.vue'
 import MainLeft from '@/component/home/MainLeft.vue'
@@ -49,6 +46,8 @@ import MainRight from '@/component/home/MainRight.vue'
 import MainCenter from '@/component/home/MainCenter.vue'
 import Footer from '@/component/home/Footer.vue'
 import ArrowDown from '@/component/home/ArrowDown.vue'
+
+const scrollDownHidden = ref(false)
 
 // 轮播图自动播放逻辑
 const startCarousel = () => {
@@ -75,14 +74,24 @@ const handleScroll = () => {
   const scrollDown = document.querySelector('.scroll-down')
   if (window.scrollY > 200) {
     scrollDown?.classList.add('hidden')
+    scrollDownHidden.value = true
   } else {
     scrollDown?.classList.remove('hidden')
+    scrollDownHidden.value = false
   }
+}
+
+const handleArrowClick = () => {
+  window.scrollTo({
+    top: document.querySelector('.pic-text').offsetTop,
+    behavior: 'smooth',
+  })
 }
 
 // 页面加载完成后启动轮播
 onMounted(() => {
   startCarousel()
+
   window.addEventListener('scroll', handleScroll)
 })
 
@@ -211,10 +220,5 @@ onUnmounted(() => {
   100% {
     opacity: 0.5;
   }
-}
-
-.pic-text {
-  max-width: 1400px;
-  margin: 0 auto;
 }
 </style>

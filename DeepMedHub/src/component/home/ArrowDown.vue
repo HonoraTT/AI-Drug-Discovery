@@ -1,5 +1,5 @@
 <template>
-  <div class="scroll-down">
+  <div class="scroll-down" :class="{ hidden }" @click="handleClick">
     <div class="arrow-circle">
       <div class="arrow-icon"></div>
     </div>
@@ -7,7 +7,21 @@
 </template>
 
 <script setup>
-// 箭头组件不需要额外的逻辑
+// 定义接收的props
+const props = defineProps({
+  hidden: {
+    type: Boolean,
+    default: false,
+  },
+})
+
+// 定义触发的事件
+const emit = defineEmits(['click'])
+
+// 处理点击事件
+const handleClick = () => {
+  emit('click')
+}
 </script>
 
 <style scoped>

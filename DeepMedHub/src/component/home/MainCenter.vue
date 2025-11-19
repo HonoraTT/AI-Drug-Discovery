@@ -1,62 +1,64 @@
 <template>
-  <section class="feature-section">
-    <div class="feature-grid">
-      <!-- 第一组：左图右文（奇数） -->
-      <div class="feature-item odd">
-        <div class="feature-image">
-          <img src="@/assets/imgs/img1.jpg" alt="功能1" />
+  <div class="pic-text">
+    <section class="feature-section">
+      <div class="feature-grid">
+        <!-- 第一组：左图右文（奇数） -->
+        <div class="feature-item odd">
+          <div class="feature-image">
+            <img src="@/assets/imgs/img1.jpg" alt="功能1" />
+          </div>
+          <div class="feature-text">
+            <h3>功能一</h3>
+            <p>这里是关于第一个功能的详细描述，可以展示该功能的具体作用和优势。</p>
+          </div>
         </div>
-        <div class="feature-text">
-          <h3>功能一</h3>
-          <p>这里是关于第一个功能的详细描述，可以展示该功能的具体作用和优势。</p>
-        </div>
-      </div>
 
-      <!-- 第二组：左文右图（偶数） -->
-      <div class="feature-item even">
-        <div class="feature-text">
-          <h3>功能二</h3>
-          <p>这里是关于第二个功能的详细描述，可以展示该功能的具体作用和优势。</p>
+        <!-- 第二组：左文右图（偶数） -->
+        <div class="feature-item even">
+          <div class="feature-text">
+            <h3>功能二</h3>
+            <p>这里是关于第二个功能的详细描述，可以展示该功能的具体作用和优势。</p>
+          </div>
+          <div class="feature-image">
+            <img src="@/assets/imgs/img2.jpg" alt="功能2" />
+          </div>
         </div>
-        <div class="feature-image">
-          <img src="@/assets/imgs/img2.jpg" alt="功能2" />
-        </div>
-      </div>
 
-      <!-- 第三组：左图右文（奇数） -->
-      <div class="feature-item odd">
-        <div class="feature-image">
-          <img src="@/assets/imgs/img3.jpg" alt="功能3" />
+        <!-- 第三组：左图右文（奇数） -->
+        <div class="feature-item odd">
+          <div class="feature-image">
+            <img src="@/assets/imgs/img3.jpg" alt="功能3" />
+          </div>
+          <div class="feature-text">
+            <h3>功能三</h3>
+            <p>这里是关于第三个功能的详细描述，可以展示该功能的具体作用和优势。</p>
+          </div>
         </div>
-        <div class="feature-text">
-          <h3>功能三</h3>
-          <p>这里是关于第三个功能的详细描述，可以展示该功能的具体作用和优势。</p>
-        </div>
-      </div>
 
-      <!-- 第四组：左文右图（偶数） -->
-      <div class="feature-item even">
-        <div class="feature-text">
-          <h3>功能四</h3>
-          <p>这里是关于第四个功能的详细描述，可以展示该功能的具体作用和优势。</p>
+        <!-- 第四组：左文右图（偶数） -->
+        <div class="feature-item even">
+          <div class="feature-text">
+            <h3>功能四</h3>
+            <p>这里是关于第四个功能的详细描述，可以展示该功能的具体作用和优势。</p>
+          </div>
+          <div class="feature-image">
+            <img src="@/assets/imgs/img4.jpg" alt="功能4" />
+          </div>
         </div>
-        <div class="feature-image">
-          <img src="@/assets/imgs/img4.jpg" alt="功能4" />
-        </div>
-      </div>
 
-      <!-- 第五组：左图右文（奇数） -->
-      <div class="feature-item odd">
-        <div class="feature-image">
-          <img src="@/assets/imgs/img5.jpg" alt="功能5" />
-        </div>
-        <div class="feature-text">
-          <h3>功能五</h3>
-          <p>这里是关于第五个功能的详细描述，可以展示该功能的具体作用和优势。</p>
+        <!-- 第五组：左图右文（奇数） -->
+        <div class="feature-item odd">
+          <div class="feature-image">
+            <img src="@/assets/imgs/img5.jpg" alt="功能5" />
+          </div>
+          <div class="feature-text">
+            <h3>功能五</h3>
+            <p>这里是关于第五个功能的详细描述，可以展示该功能的具体作用和优势。</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <script setup></script>
@@ -160,5 +162,10 @@
 .feature-text p {
   color: #4682b4;
   line-height: 1.6;
+}
+
+.pic-text {
+  max-width: 1400px;
+  margin: 0 auto;
 }
 </style>
