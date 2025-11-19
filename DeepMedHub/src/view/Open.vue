@@ -16,6 +16,11 @@
       <div class="bottom-half" :style="bottomHalfStyle">
         <div class="content">基于深度学习的生物医药大数据智能分析与预测平台</div>
       </div>
+
+      <!-- 主页内容，在动画完成后显示 -->
+      <div v-show="showHome" class="home-content">
+        <HomeView />
+      </div>
     </div>
   </div>
 </template>
@@ -23,11 +28,13 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import HomeView from './HomeView.vue'
 
 const loading = ref(true)
 const progress = ref(0)
 const topHalfStyle = ref({ transform: 'translateY(0)' })
 const bottomHalfStyle = ref({ transform: 'translateY(0)' })
+const showHome = ref(false) // 控制主页内容显示
 
 const router = useRouter()
 
@@ -51,13 +58,15 @@ const loadProgress = () => {
 const splitAnimation = () => {
   // 延迟一小段时间确保DOM更新后再执行动画
   setTimeout(() => {
+    showHome.value = true
+
     topHalfStyle.value.transform = 'translateY(-100vh)'
     bottomHalfStyle.value.transform = 'translateY(100vh)'
 
-    // 动画完成后跳转到主页
-    setTimeout(() => {
-      router.push('/home')
-    }, 800) // 1秒后跳转到主页
+    // // 动画完成后显示主页内容
+    // setTimeout(() => {
+    //   showHome.value = true
+    // }, 200) // 与CSS过渡时间保持一致
   }, 1000)
 }
 
@@ -126,6 +135,7 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   background: linear-gradient(135deg, #e6f3ff, #b0d8ff);
+  z-index: 10; /* 确保动画层在主页内容之上 */
 }
 
 .top-half {
@@ -151,5 +161,15 @@ onMounted(() => {
   border-radius: 12px;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px rgba(135, 206, 250, 0.3);
+}
+
+/* 主页内容样式 */
+.home-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* 主页内容在动画层之下 */
 }
 </style>
