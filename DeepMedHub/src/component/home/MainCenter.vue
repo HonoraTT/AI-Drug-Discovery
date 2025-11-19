@@ -10,6 +10,12 @@
           <div class="feature-text">
             <h3>功能一</h3>
             <p>这里是关于第一个功能的详细描述，可以展示该功能的具体作用和优势。</p>
+            <el-button type="primary" plain class="btn-primary" @click="handleClick">
+              <span class="btn-text-wrapper">
+                <span class="btn-text btn-text-1">查看详细</span>
+                <span class="btn-text btn-text-2">了解更多</span>
+              </span>
+            </el-button>
           </div>
         </div>
 
@@ -18,6 +24,12 @@
           <div class="feature-text">
             <h3>功能二</h3>
             <p>这里是关于第二个功能的详细描述，可以展示该功能的具体作用和优势。</p>
+            <el-button type="primary" plain class="btn-primary" @click="handleClick">
+              <span class="btn-text-wrapper">
+                <span class="btn-text btn-text-1">查看详细</span>
+                <span class="btn-text btn-text-2">了解更多</span>
+              </span>
+            </el-button>
           </div>
           <div class="feature-image">
             <img src="@/assets/imgs/img2.jpg" alt="功能2" />
@@ -32,6 +44,12 @@
           <div class="feature-text">
             <h3>功能三</h3>
             <p>这里是关于第三个功能的详细描述，可以展示该功能的具体作用和优势。</p>
+            <el-button type="primary" plain class="btn-primary" @click="handleClick">
+              <span class="btn-text-wrapper">
+                <span class="btn-text btn-text-1">查看详细</span>
+                <span class="btn-text btn-text-2">了解更多</span>
+              </span>
+            </el-button>
           </div>
         </div>
 
@@ -40,6 +58,12 @@
           <div class="feature-text">
             <h3>功能四</h3>
             <p>这里是关于第四个功能的详细描述，可以展示该功能的具体作用和优势。</p>
+            <el-button type="primary" plain class="btn-primary" @click="handleClick">
+              <span class="btn-text-wrapper">
+                <span class="btn-text btn-text-1">查看详细</span>
+                <span class="btn-text btn-text-2">了解更多</span>
+              </span>
+            </el-button>
           </div>
           <div class="feature-image">
             <img src="@/assets/imgs/img4.jpg" alt="功能4" />
@@ -54,6 +78,12 @@
           <div class="feature-text">
             <h3>功能五</h3>
             <p>这里是关于第五个功能的详细描述，可以展示该功能的具体作用和优势。</p>
+            <el-button type="primary" plain class="btn-primary" @click="handleClick">
+              <span class="btn-text-wrapper">
+                <span class="btn-text btn-text-1">查看详细</span>
+                <span class="btn-text btn-text-2">了解更多</span>
+              </span>
+            </el-button>
           </div>
         </div>
       </div>
@@ -61,9 +91,18 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const handleClick = () => {
+  console.log('点击了按钮')
+}
+</script>
 
 <style scoped>
+.pic-text {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 .feature-section {
   margin: 3rem 0;
 }
@@ -151,6 +190,9 @@
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(135, 206, 250, 0.2);
   box-shadow: 0 4px 8px rgba(135, 206, 250, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .feature-text h3 {
@@ -164,8 +206,74 @@
   line-height: 1.6;
 }
 
-.pic-text {
-  max-width: 1400px;
-  margin: 0 auto;
+.feature-text .btn-primary {
+  max-width: 100px;
+  color: #4682b4;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.3) !important;
+  border: 1px solid rgba(135, 206, 250, 0.5) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(135, 206, 250, 0.2);
+  position: relative;
+}
+
+.feature-text .btn-primary:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(230, 243, 255, 0.7),
+    rgba(176, 216, 255, 0.7)
+  ) !important;
+  box-shadow: 0 6px 12px rgba(135, 206, 250, 0.3);
+}
+
+.feature-text .btn-text-wrapper {
+  display: inline-block;
+  width: 100%;
+  transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.feature-text .btn-primary:hover .btn-text-wrapper {
+  /* transform: translateX(-200%); */ /*弹簧起跳替换代码 */
+  animation: bounce 1s ease-in-out alternate;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(2px);
+    transform: scaleY(0.5);
+    transform-origin: bottom;
+  }
+  45% {
+    transform: scaleY(2.5);
+  }
+  50% {
+    transform: scaleY(5);
+    transform: translateY(-1000%);
+  }
+  60%,
+  70%,
+  100% {
+    transform: translateY(-1000%);
+  }
+}
+
+.feature-text .btn-text {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.feature-text .btn-text-2 {
+  position: absolute;
+  top: 0;
+  left: 200%;
+  width: 100%;
+  text-align: center;
 }
 </style>
