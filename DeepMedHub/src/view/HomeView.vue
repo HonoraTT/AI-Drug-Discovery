@@ -26,14 +26,11 @@
       </section>
 
       <!-- 向下箭头提示 -->
-      <div class="scroll-down">
-        <div class="arrow-circle">
-          <el-icon class="arrow-icon"><ArrowDown /></el-icon>
-        </div>
-      </div>
 
+      <ArrowDown />
+
+      <!-- 图文交替区域 -->
       <div class="pic-text">
-        <!-- 图文交替区域 -->
         <MainCenter />
       </div>
     </main>
@@ -51,6 +48,7 @@ import MainLeft from '@/component/home/MainLeft.vue'
 import MainRight from '@/component/home/MainRight.vue'
 import MainCenter from '@/component/home/MainCenter.vue'
 import Footer from '@/component/home/Footer.vue'
+import ArrowDown from '@/component/home/ArrowDown.vue'
 
 // 轮播图自动播放逻辑
 const startCarousel = () => {
@@ -75,7 +73,7 @@ const startCarousel = () => {
 // 滚动监听逻辑
 const handleScroll = () => {
   const scrollDown = document.querySelector('.scroll-down')
-  if (window.scrollY > 100) {
+  if (window.scrollY > 200) {
     scrollDown?.classList.add('hidden')
   } else {
     scrollDown?.classList.remove('hidden')
@@ -215,70 +213,8 @@ onUnmounted(() => {
   }
 }
 
-/* 向下箭头样式 */
-.scroll-down {
-  position: fixed;
-  top: 95%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 1000;
-  transition: opacity 0.3s ease;
-  padding: 1rem;
-}
-
-.scroll-down.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.arrow-circle {
-  width: 50px;
-  height: 50px;
-  border: 2px solid #87cefa;
-  background: linear-gradient(135deg, #e6f3ff, #b0d8ff);
-  box-shadow: 0 4px 8px rgba(135, 206, 250, 0.3);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 0.5rem;
-  animation: bounce 2s infinite;
-}
-
-.arrow-icon {
-  font-size: 2rem;
-  color: #4682b4;
-  font-weight: bold;
-  width: 1em;
-  height: 1em;
-  display: inline-flex; /* 添加这行确保图标正确显示 */
-  align-items: center;
-  justify-content: center;
-}
-
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-20px);
-  }
-  60% {
-    transform: translateY(-10px);
-  }
-}
-
-.scroll-down p {
-  color: #4682b4;
-  font-size: 0.9rem;
-}
 .pic-text {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 </style>
